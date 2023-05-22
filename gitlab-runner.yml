@@ -1,0 +1,11 @@
+apiVersion: apps.gitlab.com/v1beta2
+kind: Runner
+metadata:
+  name: gitlab-runner
+spec:
+  gitlabUrl: https://gitlab.com
+  buildImage: "ubuntu:22.04"
+  token: gitlab-runner-secret
+  config: "gitlab-runner-config-toml"
+  env: "log_level=debug"
+  tags: openshift,test
